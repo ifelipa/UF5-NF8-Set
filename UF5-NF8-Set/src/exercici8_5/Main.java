@@ -4,9 +4,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-
 public class Main {
-
 
 	public static void main(String[] args) {
 		Cotxe alfa = new Cotxe("Alfa Romeo", "Giulia", 6, 2900);
@@ -22,37 +20,45 @@ public class Main {
 		setList.add(ford);
 		setList.add(opel);
 		setList.add(seat);
-		
-		//buscando la potencia fiscal del dacia sandero
-		if (setList.contains(dacia)){
-			System.out.println("Potencia Fiscal del Dacia es: "+dacia.potFiscal()+"\n");
-		}else{
+
+		// buscando la potencia fiscal del dacia sandero
+		if (setList.contains(dacia)) {
+			System.out.println("Potencia Fiscal del Dacia es: " + dacia.potFiscal() + "\n");
+		} else {
 			System.out.println("-1");
-		}	
-		
-		//Agregando dos coches
-		
+		}
+
+		// Agregando dos coches
+
 		setList.add(new Cotxe("Hyundai", "Atos", 3, 1500));
 		setList.add(new Cotxe("Ford", "Focus", 4, 2000));
-		
+
 		imprimir(setList);
-		
-		//Añadendo Duplicado
+
+		// Añadendo Duplicado
 		System.out.println("====== Agregando duplicado ===========");
 		System.out.println(setList.add(ford));
-		
-		//Añadiendo el audi y No se puede agregar al inicio sel SET
-		System.out.println("========= Añandiendo al inicio, NO SE PUEDE");
-		setList.add(new Cotxe("Audi", "A8", 8, 4600));
 
+		// Añadiendo el audi y No se puede agregar al inicio sel SET
+		System.out.println("========= Añandiendo al inicio, NO SE PUEDE");
+		// setList.add(new Cotxe("Audi", "A8", 8, 4600));
+
+		// Sustituyendo el seat Ibiza por el seat mii
+		if (setList.contains(seat)) {
+			setList.remove(seat);
+			setList.add(new Cotxe("Seat", "Mii", 1000, 3));
+		}
+		imprimir(setList);
 	}
 
+
 	private static void imprimir(Set<Cotxe> setList) {
-		Iterator<Cotxe> it= setList.iterator();
-		while(it.hasNext()){			
+		Iterator<Cotxe> it = setList.iterator();
+		while (it.hasNext()) {
 			System.out.println(it.next().toString());
 		}
 	}
-		
-
+	
+	
+	
 }

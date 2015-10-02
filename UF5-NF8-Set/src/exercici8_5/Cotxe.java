@@ -67,11 +67,42 @@ public class Cotxe implements Comparable<Cotxe>  {
 	}
 
 	@Override
-	public int compareTo(Cotxe o) {
-		
+	public int compareTo(Cotxe o) {		
 		return (this.getCilindrada()==o.getCilindrada()? 0: ((this.getCilindrada() < o.getCilindrada())? -1: 1));
-		
-		
-	
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((marca == null) ? 0 : marca.hashCode());
+		result = prime * result + ((modelo == null) ? 0 : modelo.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Cotxe other = (Cotxe) obj;
+		if (marca == null) {
+			if (other.marca != null)
+				return false;
+		} else if (!marca.equals(other.marca))
+			return false;
+		if (modelo == null) {
+			if (other.modelo != null)
+				return false;
+		} else if (!modelo.equals(other.modelo))
+			return false;
+		return true;
+	}
+
+
+
+	
 }
