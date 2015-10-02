@@ -42,7 +42,6 @@ public class Main {
 		// Añadiendo el audi y No se puede agregar al inicio sel SET
 		System.out.println("========= Añandiendo al inicio, NO SE PUEDE");
 		// setList.add(new Cotxe("Audi", "A8", 8, 4600));
-		
 
 		// Sustituyendo el seat Ibiza por el seat mii
 		if (setList.contains(seat)) {
@@ -50,8 +49,9 @@ public class Main {
 			setList.add(new Cotxe("Seat", "Mii", 1000, 3));
 		}
 		imprimir(setList);
+		System.out.println("************************");
+		System.out.println(setList.toString());
 	}
-
 
 	private static void imprimir(Set<Cotxe> setList) {
 		Iterator<Cotxe> it = setList.iterator();
@@ -59,7 +59,5 @@ public class Main {
 			System.out.println(it.next().toString());
 		}
 	}
-	
-	
-	
+
 }
