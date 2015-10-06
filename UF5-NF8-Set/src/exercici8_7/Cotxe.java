@@ -1,7 +1,7 @@
 package exercici8_7;
 
 public class Cotxe implements Comparable<Cotxe>  {
-//public class Cotxe {
+
 	String marca;
 	String modelo;
 	int nCilindros;
@@ -67,7 +67,6 @@ public class Cotxe implements Comparable<Cotxe>  {
 
 	@Override
 	public int compareTo(Cotxe o) {
-		return (this.getCilindrada() == o.getCilindrada() ? 0 : ((this.getCilindrada() < o.getCilindrada()) ? -1 : 1));
-
+		return (this.getCilindrada() == o.getCilindrada() ? 0 : ((this.getCilindrada() < o.getCilindrada()) ? -1 : 1));	
 	}
 }
