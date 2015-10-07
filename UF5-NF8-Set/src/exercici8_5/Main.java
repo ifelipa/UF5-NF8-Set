@@ -13,7 +13,7 @@ public class Main {
 		Cotxe opel = new Cotxe("Opel", "Insignia", 4, 2200);
 		Cotxe seat = new Cotxe("Seat", "Ibiza", 4, 1600);
 
-		Set<Cotxe> setList = new HashSet<Cotxe>();
+		HashSet<Cotxe> setList = new HashSet<Cotxe>();
 
 		setList.add(alfa);
 		setList.add(dacia);
@@ -31,13 +31,13 @@ public class Main {
 		// Agregando dos coches
 
 		setList.add(new Cotxe("Hyundai", "Atos", 3, 1500));
-		setList.add(new Cotxe("Ford", "Focus", 4, 2000));
+
 
 		imprimir(setList);
 
 		// Añadendo Duplicado
 		System.out.println("====== Agregando duplicado ===========");
-		System.out.println(setList.add(ford));
+		System.out.println(		setList.add(new Cotxe("Ford", "Focus", 4, 2000)));
 
 		// Añadiendo el audi y No se puede agregar al inicio sel SET
 		System.out.println("========= Añandiendo al inicio, NO SE PUEDE");
